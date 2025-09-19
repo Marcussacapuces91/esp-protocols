@@ -34,11 +34,11 @@ static const console_cmd_plugin_desc_t __attribute__((section(".console_cmd_desc
 #endif
 
 typedef struct wifi_op_t {
-    char *name;
+    const char *name;
     esp_err_t (*operation)(struct wifi_op_t *self, int argc, char *argv[]);
     int arg_cnt;
     int start_index;
-    char *help;
+    const char *help;
 } wifi_op_t;
 
 static esp_err_t wifi_help_op(wifi_op_t *self, int argc, char *argv[]);
